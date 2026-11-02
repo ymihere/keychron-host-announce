@@ -115,7 +115,9 @@ qmk userspace-compile
 
 ## Status
 
-**Not yet built or tested on a keyboard.** Please check these before relying on it:
+**Builds in CI, not yet tested on a keyboard.** All three layouts compile against
+`Keychron/qmk_firmware` branch `2025q3` without errors or warnings. Nobody has flashed them yet.
+Please check these before relying on it:
 
 - the combo reaches the old computer before the link drops;
 - no key stays stuck on the old computer after a switch;
