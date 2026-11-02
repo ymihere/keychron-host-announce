@@ -1,0 +1,21 @@
+name: Build firmware
+
+on: [push, workflow_dispatch]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build
+    uses: qmk/.github/.github/workflows/qmk_userspace_build.yml@main
+    with:
+      # Keychron's wireless code lives only in Keychron's fork, not in mainline QMK.
+      qmk_repo: Keychron/qmk_firmware
+      qmk_ref: 2025q3
+
+  publish:
+    name: Publish
+    uses: qmk/.github/.github/workflows/qmk_userspace_publish.yml@main
+    if: always() && !cancelled()
+    needs: build
