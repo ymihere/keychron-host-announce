@@ -1,0 +1,8 @@
+{
+    "userspace_version": "1.0",
+    "build_targets": [
+        ["keychron/v6_max/ansi_encoder", "hostannounce"],
+        ["keychron/v6_max/iso_encoder", "hostannounce"],
+        ["keychron/v6_max/jis_encoder", "hostannounce"]
+    ]
+}
