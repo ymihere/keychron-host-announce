@@ -109,10 +109,12 @@ reasoning from the code, not yet a test result.
    So pair the Keychron's Bluetooth host 1 with `linux-a` and host 3 with `linux-b`. To pair,
    hold Fn+1 or Fn+3 for about 4 s and pair from the computer's Bluetooth settings.
 2. **`mx-push-mouse` on every computer you switch away from.** The computer the keyboard
-   *leaves* is the one that moves the mouse. Install it with `mx-setup.sh` from the
-   `mx-easy-switch` project. That also installs Solaar rules for an MX keyboard. They do no harm
-   when the Keychron is used instead. It must be a version with the scan retry (section 6.1,
-   third trap).
+   *leaves* is the one that moves the mouse. Install it with `mx-setup.sh --mouse-only` from the
+   `mx-easy-switch` project, with the mouse on that computer (no MX keyboard needed). Without
+   `--mouse-only` it also installs Solaar rules for an MX keyboard; they do no harm when the
+   Keychron is used instead. It must be a version with the scan retry (section 6.1, third trap);
+   every `mx-setup.sh` from 2026-11-10 on has it. The full command list for a new computer is in
+   the README, "Set up each computer".
 3. **The mouse must be reachable from that computer:** through its receiver or its Bluetooth link.
    If the mouse is not there, `mx-push-mouse` logs `mouse not found` and nothing happens.
 

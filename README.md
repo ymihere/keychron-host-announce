@@ -89,7 +89,21 @@ not touched. Keychron warns against updating that one yourself.
 
 ### 3. Set up each computer
 
-On Linux with Cinnamon, bind the combos to your mouse command:
+On a Linux Mint / Cinnamon computer with a Logitech MX mouse, this is all of it. Put the mouse on
+that computer first:
+
+```sh
+sudo apt install solaar git
+git clone https://github.com/ymihere/mx-easy-switch.git
+git clone https://github.com/ymihere/keychron-host-announce.git
+./mx-easy-switch/mx-setup.sh --mouse-only               # installs ~/.local/bin/mx-push-mouse
+./keychron-host-announce/host/install-cinnamon-shortcuts.sh
+```
+
+If an MX keyboard is used on that computer too, run `mx-setup.sh` without `--mouse-only`
+(with both MX devices there): it installs the same `mx-push-mouse` plus the MX keyboard's rules.
+Pair the mouse and the keyboard with the computers in the same order (keyboard host 1 = mouse
+slot 1, and so on). The shortcut script in detail:
 
 ```sh
 ./host/install-cinnamon-shortcuts.sh --dry-run   # show what would change
