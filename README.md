@@ -69,7 +69,9 @@ layout from the **latest** release. To build it yourself, see [Building](#buildi
 ### 2. Flash it
 
 1. Set the mode switch to cable. Hold **Esc** while you plug the cable in. The keyboard starts in
-   its bootloader and shows up as USB device `0483:df11`.
+   its bootloader and shows up as USB device `0483:df11`. The first try often fails
+   (`device descriptor read/64, error -71` in the kernel log). Wait about 15 s: the kernel
+   retries and the bootloader usually appears without a replug.
 2. **Back up the stock firmware first:**
    ```sh
    dfu-util -a 0 -d 0483:df11 -s 0x08000000:262144 -U stock-backup.bin
@@ -146,11 +148,15 @@ qmk userspace-compile
 
 ## Status
 
-**Works on a keyboard (2026-11-10).** The ISO build was flashed on a V6 Max and used between two
-Linux Mint / Cinnamon computers:
+**Works on two keyboards.**
 
-- the combo reaches the old computer before the link drops;
-- the mouse follows in both directions, from Fn+1/2/3 and from F13–F15 remapped in Launcher.
+- **2026-11-10, first V6 Max (ISO).** Flashed and used between two Linux Mint / Cinnamon
+  computers:
+  - the combo reaches the old computer before the link drops;
+  - the mouse follows in both directions, from Fn+1/2/3 and from F13–F15 remapped in Launcher.
+- **2026-11-13, second V6 Max (ISO).** Flashed with the `latest` release, following the steps
+  above. The three keys above the number pad are set to Bluetooth Host 1–3 in Launcher. The mouse
+  follows the keyboard.
 
 Not yet checked:
 
